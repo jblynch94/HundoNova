@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>APP NAME: Coding Challenge by Jacob Lynch</title>
+    <title>Hundo: Coding Challenge by Jacob Lynch</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"><img src="/img/J.L 2.svg" height="40px" alt="none" class="d-inline-block border"> App Name</a>
+            <a class="navbar-brand" href="/index.html"><img src="/img/J.L 2.svg" height="40px" alt="none" class="d-inline-block border">Hundo</a>
             <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -55,9 +55,18 @@
     <!-- Main -->
     <main class="content">
         <div class="container mt-5">
-            <h1>APP UI GOES HERE</h1>
-            <input type="text" id="message" placeholder="Enter a Message">
-            <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+            <h1>Enter a number</h1>
+            <input type="number" id="startValue" placeholder="Enter a Start Value">
+            <input type="number" id="endValue" placeholder="Enter a End Value">
+            <button id="btnSubmit" class="btn btn-primary">Display Number</button>
+            <h4>Results</h4>
+            <hr>
+            <div class ="row row-cols-5" id="results">
+                <div>
+
+                </div>
+
+            </div>
         </div>
     </main>
     <!-- Footer -->
@@ -86,7 +95,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click",getValue2);
+        document.getElementById("btnSubmit").addEventListener("click",getNumbers);
     </script>
 </body>
 </html>

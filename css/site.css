@@ -1,10 +1,10 @@
 :root{
-    --jbl-primary-color: #3f547e;
-    --jbl-secondary-color: #FFD43B;
-    --jbl-dark-color: #4f6197;
+    --jbl-primary-color:  rgb(66,148,186);
+    --jbl-secondary-color: rgb(255, 255, 255);
+    --jbl-dark-color:  rgb(27, 61, 77);
     --jbl-light-color: #ffffff;
-    --jbl-highlight-color: #FFD43B;
-    --jbl-nav-toggler-glow: #FFD43B;
+    --jbl-highlight-color:  rgb(240, 142, 62);
+    --jbl-nav-toggler-glow: rgb(240, 142, 62);
     }
 /* sticky footer setup */
 html,body{
@@ -112,4 +112,16 @@ u{
     color: var(--jbl-highlight-color);
     border-color: var(--jbl-highlight-color);
     background-color: transparent;
+}
+
+.even{
+    color: green;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+}
+
+.odd{
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
 }
