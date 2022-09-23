@@ -22,7 +22,7 @@
     <!-- Nav -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"><img src="/img/J.L 2.svg" height="40px" alt="none" class="d-inline-block border"> Hundo</a>
+            <a class="navbar-brand" href="/index.html"><img src="/img/J.L 2.svg" height="40px" alt="none" class="d-inline-block border brand"> Hundo</a>
             <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -39,16 +39,16 @@
                         <a class="nav-link" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/app.html">The App</a>
+                        <a class="nav-link" href="/app.html">The App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">The Repo</a>
+                        <a class="nav-link" href="https://github.com/jblynch94/HundoNova.git">The Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="https://jbldevportfolio.netlify.app/">About</a>
                     </li>
                 </ul>
             </div>
@@ -61,29 +61,86 @@
                 <div class="col-12 col-lg-8">
                         <pre class="line-numbers">
                             <code class="language-js">
-                                function getValue(message){
-                                    alert("HELLO WOLRD!");
+                                function getNumbers(){
+                                    let start = document.getElementById("startValue").value;
+                                    let end = document.getElementById("endValue").value;
+                                
+                                    start = parseInt(start);
+                                    end = parseInt(end);
+                                
+                                    if (Number.isInteger(start) && Number.isInteger(end)) {
+                                        let numbers = generateNumbers(start,end);
+                                        displayValuesRev(numbers);
+                                    }else{
+                                       Swal.fire({
+                                        backdrop: false,
+                                        title: "oops!",
+                                        text: "You can only enter numbers."
+                                       });
+                                    }
                                 }
-                                function getValue2(){
-                                    let msg = '';
-                                    msg = document.getElementById("message").value;
-                                    swal.fire(
-                                        {
-                                            backdrop: false,
-                                            title: 'Hundo Name',
-                                            text: msg
+                                // generates numbers
+                                // buessness logic
+                                function generateNumbers(start, stop){
+                                    let numbers = [];
+                                    for(let i=start; i<=stop; i++){
+                                        numbers.push(i);
+                                    }
+                                    return numbers;
+                                }
+                                
+                                // displays a list of numbers
+                                // bold the even numbers
+                                function displayValues(value){
+                                    results = document.getElementById("results");
+                                    results.innerHTML="";
+                                
+                                    for(let i=0; i < value.length; i++){
+                                        let divTag = document.createElement("div");
+                                        divTag.classList.add("col");
+                                        divTag.innerHTML = value[i];
+                                           
+                                        if(value[i]%2==0){
+                                            divTag.classList.add("even");
+                                            results.appendChild(divTag);
+                                        }else{
+                                            divTag.classList.add("odd");
+                                            results.appendChild(divTag);
                                         }
-                                    );
+                                    }
+                                }
+                                
+                                function displayValuesRev(value){
+                                    results = document.getElementById("results");
+                                    results.innerHTML="";
+                                
+                                    for(let i=value.length-1; i >= 0; i--){
+                                        let divTag = document.createElement("div");
+                                        divTag.classList.add("col");
+                                        divTag.innerHTML = value[i];
+                                           
+                                        if(value[i]%2==0){
+                                            divTag.classList.add("even");
+                                            results.appendChild(divTag);
+                                        }else{
+                                            divTag.classList.add("odd");
+                                            results.appendChild(divTag);
+                                        }
+                                    }
                                 }
                             </code>
                         </pre>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>the Code is structured in two functions</p>
-                    <h5>getValue</h5>
-                    <p>Prints an alert to the page</p>
-                    <h5>getValue2</h5>
-                    <p>Displays a user entered message in a sweet alerts window</p>
+                    <p>This Code is structured into four functions</p>
+                    <h5>getNumbers</h5>
+                    <p>Gets Numbers in order to use them in functions.</p>
+                    <h5>generateNumbers</h5>
+                    <p>Takes a start and stop and generates an array of numbers.</p>
+                    <h5>displayValues</h5>
+                    <p>Takes in an array and displays numbers in order.</p>
+                    <h5>displayValuesRev</h5>
+                    <p>Takes in an array and displays numbers in reverse order.</p>
                 </div>
             </div>
         </div>
@@ -102,8 +159,6 @@
                     <div class="row">
                         <div class="col social"><a href="https://www.linkedin.com/in/jacob-brock-lynch-669930137/" target="_blank"><em class="bi bi-linkedin"></em></a></div>
                         <div class="col social"><a href="https://github.com/jblynch94"><em class="bi bi-github" target="_blank"></em></a></div>
-                        <div class="col social"><a href="#"><em class="bi bi-twitter"></em></a></div>
-                        <div class="col social"><a href="#"><em class="bi bi-youtube"></em></a></div>
                     </div>
                 </div>
             </div>
